@@ -13,7 +13,7 @@ export const promedio = xs => xs.length  ?  suma(xs) / xs.length : 0; // calcula
 
 
 // funcion totalPorCategoria
-export function totalPoCategoria(gastos) {
+export function totalPorCategoria(gastos) {
     return gastos.reduce((acc, gasto) => {  // acc es el acumulador, gasto es el elemento actual del array
         const key = gasto.categoria ?? 'Sin Categoria'; // si no tiene categoria, se asigna 'Sin Categoria'
         const nuevo = { ...acc }; // se crea una copia del acumulador
@@ -37,9 +37,9 @@ export function minMax(gastos) {
     };
 }
 
-export function totalPoCategoria(gastos) {
+export function topCategoria(gastos) {
 
-    const mapa = totalPoCategoria(gastos); // se obtiene el total por categoria
+    const mapa = totalPorCategoria(gastos); // se obtiene el total por categoria
     const pares = Object.entries(mapa); // se convierte el objeto en un array de pares [ [categoria, total], [categoria, total], ... ]
 
     if (pares.length === 0) { // si no hay categorias, se retorna un objeto con categoria 'Sin Categoria' y total 0
